@@ -257,12 +257,13 @@ Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true)
 <section id="comments">
     <div id="gitalk-container"></div>
     <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
     <script type="text/javascript">
         var gitalk = new Gitalk({
-            clientID: 'undefined',
-            clientSecret: 'undefined',
-            id: window.location.pathname,
+            clientID: 'ded5cddc15fba2043b8d',
+            clientSecret: 'fbf5cfde82217bf2200ade34f9d4222756d8009b',
+            id: md5(window.location.pathname),
             repo: 'http://loveCG.github.io',
             owner: 'loveCG',
             admin: 'loveCG'
