@@ -150,123 +150,118 @@
 	</div>
 </nav>
       <div class="body-wrap"><article id="post-XMPP连接问题" class="article article-type-post" itemscope itemprop="blogPost">
-  
+    
     <div class="article-meta">
-      <a href="/2017/12/22/XMPP连接问题/" class="article-date">
+        <a href="/2017/12/22/XMPP连接问题/" class="article-date">
   	<time datetime="2017-12-22T10:00:00.000Z" itemprop="datePublished">2017-12-22</time>
 </a>
     </div>
-  
-  <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+    <div class="article-inner">
         
+        <input type="hidden" class="isFancy"/>
+        
+        
+        <header class="article-header">
+            
   
     <h1 class="article-title" itemprop="name">
       XMPP连接问题
     </h1>
   
 
-      </header>
-      
-      <div class="article-info article-info-post">
+        </header>
         
+        <div class="article-info article-info-post">
+            
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ejabberd/">Ejabberd</a></li></ul>
 	</div>
 
+            
+
+            <div class="clearfix"></div>
+        </div>
+        
         
 
-        <div class="clearfix"></div>
-      </div>
-      
-    
+        <!-- 目录内容 -->
+        
+        <!-- 目录内容结束 -->
+        <div class="article-entry" itemprop="articleBody">
+            
 
-      <!-- 目录内容 -->
-      
-      <!-- 目录内容结束 -->
-      <div class="article-entry" itemprop="articleBody">
-          
-
-
-
-
-          <p>最近使用ejabberd搭建IM服务器，使用smack内库连接XMPP。会一直报一个流错误的异常：</p>
+            <p>最近使用ejabberd搭建IM服务器，使用smack内库连接XMPP。会一直报一个流错误的异常：</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">stream:error (text)</span><br><span class="line">	at org<span class="selector-class">.jivesoftware</span><span class="selector-class">.smack</span><span class="selector-class">.PacketReader</span><span class="selector-class">.parsePackets</span>(PacketReader<span class="selector-class">.java</span>:<span class="number">251</span>)</span><br><span class="line">	at org<span class="selector-class">.jivesoftware</span><span class="selector-class">.smack</span><span class="selector-class">.PacketReader</span><span class="selector-class">.access</span>$<span class="number">000</span>(PacketReader<span class="selector-class">.java</span>:<span class="number">46</span>)</span><br><span class="line">	at org<span class="selector-class">.jivesoftware</span><span class="selector-class">.smack</span><span class="selector-class">.PacketReader</span>$<span class="number">1</span>.run(PacketReader<span class="selector-class">.java</span>:<span class="number">72</span>)</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>查阅了很多资料，发现问题所在:<br>当ejabberd设置max_user_sessions 为n的时候，同一用户使用相同的资源尝试 n+1 连接到服务器，导致正在使用的帐号被别人登录时挤下，然后报出stream:error (text)。<br>正常情况下普通用户会配置互踢，就是max_user_sessions= 1，客户端处理上面流错误实现客户端互踢功能。当管理员想要多个session同时登录，可以在ejabberd上配置：</p>
 <figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">max_user_sessions:</span></span><br><span class="line"><span class="symbol">  admin:</span> <span class="number">10</span> </span><br><span class="line"><span class="symbol">  all:</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
 <p>此配置的意思是，普通用户只允许一个session，管理员角色可最多允许10个session同时在线。</p>
 
-          
-      </div>
+            
+        </div>
+        
+        
+        
+        
+    </div>
     
-	
-	
-	
-  </div>
-  
     
-  
+    
 </article>
 
 
 <div class="share">
-    <!-- JiaThis Button BEGIN -->
-    <!--<div class="jiathis_style">-->
-    <!--<span class="jiathis_txt">分享到：</span>-->
-    <!--<a class="jiathis_button_tsina"></a>-->
-    <!--<a class="jiathis_button_cqq"></a>-->
-    <!--<a class="jiathis_button_douban"></a>-->
-    <!--<a class="jiathis_button_weixin"></a>-->
-    <!--<a class="jiathis_button_tumblr"></a>-->
-    <!--<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>-->
-    <!--</div>-->
-    <!--<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=2073284" charset="utf-8"></script>-->
-    <!--JiaThis Button END -->
-
     <div class="social-share"></div>
 
     <!--  css & js -->
-    <link rel="stylesheet" href="/css/share.min.css">
-    <script type="text/javascript" src="/js/jquery.share.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/jquery.share.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
 </div>
 
-	<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
-<script>
-var cloudTieConfig = {
-  url: document.location.href, 
-  sourceId: "",
-  productKey: "a27b7d1dd4c3477abb97c64a75b1767f",
-  target: "cloud-tie-wrapper"
-};
-var yunManualLoad = true;
-Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
-</script>
+
+<!---->
+<!--<section id="comments">-->
+<!--<div id="gitalk-container"></div>-->
+<!--<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">-->
+<!--<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--var gitalk = new Gitalk({-->
+<!--clientID: 'ded5cddc15fba2043b8d',-->
+<!--clientSecret: 'fbf5cfde82217bf2200ade34f9d4222756d8009b',-->
+<!--id: window.location.pathname,-->
+<!--repo: 'loveCG.github.io',-->
+<!--owner: 'loveCG',-->
+<!--admin: 'loveCG'-->
+<!--})-->
+<!--gitalk.render('gitalk-container')-->
+<!--</script>-->
+<!--</section>-->
+<!---->
 
 
 
-<section id="comments">
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script type="text/javascript" src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<div class="comments" id="comments" style="margin: 30px 30px 0">
     <div id="gitalk-container"></div>
-    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-    <script type="text/javascript" src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
-    <script type="text/javascript">
-        var gitalk = new Gitalk({
-            clientID: 'ded5cddc15fba2043b8d',
-            clientSecret: 'fbf5cfde82217bf2200ade34f9d4222756d8009b',
-            id: md5(window.location.pathname),
-            repo: 'loveCG.github.io',
-            owner: 'loveCG',
-            admin: 'loveCG'
-        })
-        gitalk.render('gitalk-container')
-    </script>
-</section>
+</div>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '{{theme.gitalk.clientID}}',
+        clientSecret: '{{theme.gitalk.clientSecret}}',
+        id: md5(window.location.pathname),
+        repo: '{{theme.gitalk.repo}}',
+        owner: '{{theme.gitalk.owner}}',
+        admin: '{{theme.gitalk.admin}}',
+        distractionFreeMode: '{{theme.gitalk.distractionFreeMode}}',
+    })
+    gitalk.render('gitalk-container')
+</script>
 
 </div>
       <footer id="footer">
