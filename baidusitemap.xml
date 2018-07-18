@@ -4,14 +4,31 @@
 
     
   <url>
+    <loc>http://lovecg.tech/2018/07/18/Mac%E7%89%88Charles%E5%B7%A5%E5%85%B7Response%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2018-07-18T12:32:12.363Z</lastmod>
+    <data>
+        <display>
+        <title>Mac版Charles工具Response中文乱码问题</title>
+        <pubTime>2018-07-18T03:45:46.000Z</pubTime>
+        
+        <tag>Charles</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://lovecg.tech/2017/12/22/XMPP%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2018-07-12T02:25:44.478Z</lastmod>
+    <lastmod>2018-07-12T12:31:50.697Z</lastmod>
     <data>
         <display>
         <title>XMPP连接问题</title>
         <pubTime>2017-12-22T10:00:00.000Z</pubTime>
         
-        <tag>Ejabberd</tag>
+        <tag>ejabberd</tag>
          
          
            

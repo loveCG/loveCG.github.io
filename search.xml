@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Mac版Charles工具Response中文乱码问题]]></title>
+    <url>%2F2018%2F07%2F18%2FMac%E7%89%88Charles%E5%B7%A5%E5%85%B7Response%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[之前一直使用的是Charles 3.8，乱码问题通过修改Info.plist文件的方式解决，升级最新版本的Charles之后，修改Info.plist文件的方式不生效了。网上找到下面的方法，并实践成功了，现总结一下。 菜单栏-&gt;Tools-&gt;Rewrite 点击左边add添加一个setting，然后点击右边下面add添加一个规则，可以选择不添加IP或域名. 刷新一下就好了。]]></content>
+      <tags>
+        <tag>Charles</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[XMPP连接问题]]></title>
     <url>%2F2017%2F12%2F22%2FXMPP%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[最近使用ejabberd搭建IM服务器，使用smack内库连接XMPP。会一直报一个流错误的异常： 1234stream:error (text) at org.jivesoftware.smack.PacketReader.parsePackets(PacketReader.java:251) at org.jivesoftware.smack.PacketReader.access$000(PacketReader.java:46) at org.jivesoftware.smack.PacketReader$1.run(PacketReader.java:72) 查阅了很多资料，发现问题所在:当ejabberd设置max_user_sessions 为n的时候，同一用户使用相同的资源尝试 n+1 连接到服务器，导致正在使用的帐号被别人登录时挤下，然后报出stream:error (text)。正常情况下普通用户会配置互踢，就是max_user_sessions= 1，客户端处理上面流错误实现客户端互踢功能。当管理员想要多个session同时登录，可以在ejabberd上配置： 123max_user_sessions: admin: 10 all: 1 此配置的意思是，普通用户只允许一个session，管理员角色可最多允许10个session同时在线。]]></content>
       <tags>
-        <tag>Ejabberd</tag>
+        <tag>ejabberd</tag>
       </tags>
   </entry>
 </search>
