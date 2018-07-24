@@ -3,20 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>XMPP连接问题 | 工作笔记</title>
+  <title>Logback生成日志中文乱码问题 | 工作笔记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近使用ejabberd搭建IM服务器，使用smack内库连接XMPP。会一直报一个流错误的异常： 1234stream:error (text)	at org.jivesoftware.smack.PacketReader.parsePackets(PacketReader.java:251)	at org.jivesoftware.smack.PacketReader.access$000(P">
-<meta name="keywords" content="ejabberd">
+  <meta name="description" content="在最新的Spring项目中集成logback+slf4j替换了原来使用的log4j，但是项目启动之后，打印日志中文显示乱码。 首先想到的肯定是在logback.xml配置文件中设置日志的编码格式，使用了以下方法： 123456&amp;lt;appender name=&quot;STDOUT&quot; class=&quot;ch.qos.logback.core.ConsoleAppender&quot;&amp;gt;	&amp;lt;encoder&amp;">
+<meta name="keywords" content="log">
 <meta property="og:type" content="article">
-<meta property="og:title" content="XMPP连接问题">
-<meta property="og:url" content="http://lovecg.tech/2017/12/22/XMPP连接问题/index.html">
+<meta property="og:title" content="Logback生成日志中文乱码问题">
+<meta property="og:url" content="http://lovecg.tech/2016/10/19/Logback生成日志中文乱码问题/index.html">
 <meta property="og:site_name" content="工作笔记">
-<meta property="og:description" content="最近使用ejabberd搭建IM服务器，使用smack内库连接XMPP。会一直报一个流错误的异常： 1234stream:error (text)	at org.jivesoftware.smack.PacketReader.parsePackets(PacketReader.java:251)	at org.jivesoftware.smack.PacketReader.access$000(P">
+<meta property="og:description" content="在最新的Spring项目中集成logback+slf4j替换了原来使用的log4j，但是项目启动之后，打印日志中文显示乱码。 首先想到的肯定是在logback.xml配置文件中设置日志的编码格式，使用了以下方法： 123456&amp;lt;appender name=&quot;STDOUT&quot; class=&quot;ch.qos.logback.core.ConsoleAppender&quot;&amp;gt;	&amp;lt;encoder&amp;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-12T12:31:50.697Z">
+<meta property="og:image" content="https://lh3.googleusercontent.com/-Wn_y1Qy5aUM/W1cVJfj5_kI/AAAAAAAAADc/FwpS3BweccQqoR6IY5qouvBWhgWl1aa4wCHMYCw/I/tomcat1.jpg =500x">
+<meta property="og:updated_time" content="2018-07-24T12:06:35.954Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="XMPP连接问题">
-<meta name="twitter:description" content="最近使用ejabberd搭建IM服务器，使用smack内库连接XMPP。会一直报一个流错误的异常： 1234stream:error (text)	at org.jivesoftware.smack.PacketReader.parsePackets(PacketReader.java:251)	at org.jivesoftware.smack.PacketReader.access$000(P">
+<meta name="twitter:title" content="Logback生成日志中文乱码问题">
+<meta name="twitter:description" content="在最新的Spring项目中集成logback+slf4j替换了原来使用的log4j，但是项目启动之后，打印日志中文显示乱码。 首先想到的肯定是在logback.xml配置文件中设置日志的编码格式，使用了以下方法： 123456&amp;lt;appender name=&quot;STDOUT&quot; class=&quot;ch.qos.logback.core.ConsoleAppender&quot;&amp;gt;	&amp;lt;encoder&amp;">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/-Wn_y1Qy5aUM/W1cVJfj5_kI/AAAAAAAAADc/FwpS3BweccQqoR6IY5qouvBWhgWl1aa4wCHMYCw/I/tomcat1.jpg =500x">
   
     <link rel="alternative" href="/atom.xml" title="工作笔记" type="application/atom+xml">
   
@@ -149,11 +151,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-XMPP连接问题" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Logback生成日志中文乱码问题" class="article article-type-post" itemscope itemprop="blogPost">
     
     <div class="article-meta">
-        <a href="/2017/12/22/XMPP连接问题/" class="article-date">
-  	<time datetime="2017-12-22T10:00:00.000Z" itemprop="datePublished">2017-12-22</time>
+        <a href="/2016/10/19/Logback生成日志中文乱码问题/" class="article-date">
+  	<time datetime="2016-10-19T03:45:46.000Z" itemprop="datePublished">2016-10-19</time>
 </a>
     </div>
     
@@ -166,7 +168,7 @@
             
   
     <h1 class="article-title" itemprop="name">
-      XMPP连接问题
+      Logback生成日志中文乱码问题
     </h1>
   
 
@@ -175,7 +177,7 @@
         <div class="article-info article-info-post">
             
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ejabberd/">ejabberd</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/log/">log</a></li></ul>
 	</div>
 
             
@@ -191,12 +193,14 @@
         <div class="article-entry" itemprop="articleBody">
             
 
-            <p>最近使用ejabberd搭建IM服务器，使用smack内库连接XMPP。会一直报一个流错误的异常：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">stream:error (text)</span><br><span class="line">	at org<span class="selector-class">.jivesoftware</span><span class="selector-class">.smack</span><span class="selector-class">.PacketReader</span><span class="selector-class">.parsePackets</span>(PacketReader<span class="selector-class">.java</span>:<span class="number">251</span>)</span><br><span class="line">	at org<span class="selector-class">.jivesoftware</span><span class="selector-class">.smack</span><span class="selector-class">.PacketReader</span><span class="selector-class">.access</span>$<span class="number">000</span>(PacketReader<span class="selector-class">.java</span>:<span class="number">46</span>)</span><br><span class="line">	at org<span class="selector-class">.jivesoftware</span><span class="selector-class">.smack</span><span class="selector-class">.PacketReader</span>$<span class="number">1</span>.run(PacketReader<span class="selector-class">.java</span>:<span class="number">72</span>)</span><br></pre></td></tr></table></figure>
+            <p>在最新的Spring项目中集成logback+slf4j替换了原来使用的log4j，但是项目启动之后，打印日志中文显示乱码。</p>
+<p>首先想到的肯定是在logback.xml配置文件中设置日志的编码格式，使用了以下方法：</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">"STDOUT"</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.ConsoleAppender"</span>&gt;</span></span></span><br><span class="line"><span class="xml">	<span class="tag">&lt;<span class="name">encoder</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;<span class="name">pattern</span>&gt;</span>%d</span><span class="template-variable">&#123;yyyy-MM-dd HH:mm:ss.SSS&#125;</span><span class="xml"> [%thread] %-5level %logger</span><span class="template-variable">&#123;50&#125;</span><span class="xml"> - %msg%n<span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;<span class="name">charset</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">charset</span>&gt;</span></span></span><br><span class="line"><span class="xml">	<span class="tag">&lt;/<span class="name">encoder</span>&gt;</span> </span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<p>查阅了很多资料，发现问题所在:<br>当ejabberd设置max_user_sessions 为n的时候，同一用户使用相同的资源尝试 n+1 连接到服务器，导致正在使用的帐号被别人登录时挤下，然后报出stream:error (text)。<br>正常情况下普通用户会配置互踢，就是max_user_sessions= 1，客户端处理上面流错误实现客户端互踢功能。当管理员想要多个session同时登录，可以在ejabberd上配置：</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">max_user_sessions:</span></span><br><span class="line"><span class="symbol">  admin:</span> <span class="number">10</span> </span><br><span class="line"><span class="symbol">  all:</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<p>此配置的意思是，普通用户只允许一个session，管理员角色可最多允许10个session同时在线。</p>
+<p>发现这样设置不起作用。又找到下面方法：</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">"STDOUT"</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.ConsoleAppender"</span>&gt;</span></span></span><br><span class="line"><span class="xml">	<span class="tag">&lt;<span class="name">encoder</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.classic.encoder.PatternLayoutEncoder"</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;<span class="name">pattern</span>&gt;</span>%d</span><span class="template-variable">&#123;yyyy-MM-dd HH:mm:ss.SSS&#125;</span><span class="xml"> [%thread] %-5level %logger</span><span class="template-variable">&#123;50&#125;</span><span class="xml"> - %msg%n<span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;<span class="name">charset</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">charset</span>&gt;</span></span></span><br><span class="line"><span class="xml">	<span class="tag">&lt;/<span class="name">encoder</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>这样还是不行的，最后想可能和tomcat启动的编码有关系，在IntelliJ IDEA中设置Tomcat启动参数,如下：<br><img src="https://lh3.googleusercontent.com/-Wn_y1Qy5aUM/W1cVJfj5_kI/AAAAAAAAADc/FwpS3BweccQqoR6IY5qouvBWhgWl1aa4wCHMYCw/I/tomcat1.jpg =500x" alt="tomcat1"><br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-Dfile.<span class="attribute">encoding</span>=UTF-8</span><br></pre></td></tr></table></figure></p>
+<p>重启Tomcat，日志显示正常了。</p>
 
             
         </div>
@@ -209,20 +213,15 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/07/18/Mac版Charles工具Response中文乱码问题/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/12/22/XMPP连接问题/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          Mac版Charles工具Response中文乱码问题
+          XMPP连接问题
         
       </div>
     </a>
   
-  
-    <a href="/2016/10/19/Logback生成日志中文乱码问题/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Logback生成日志中文乱码问题</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
   
 </nav>
 

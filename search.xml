@@ -16,4 +16,12 @@
         <tag>ejabberd</tag>
       </tags>
   </entry>
+  <entry>
+    <title><![CDATA[Logback生成日志中文乱码问题]]></title>
+    <url>%2F2016%2F10%2F19%2FLogback%E7%94%9F%E6%88%90%E6%97%A5%E5%BF%97%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[在最新的Spring项目中集成logback+slf4j替换了原来使用的log4j，但是项目启动之后，打印日志中文显示乱码。 首先想到的肯定是在logback.xml配置文件中设置日志的编码格式，使用了以下方法： 123456&lt;appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender"&gt; &lt;encoder&gt; &lt;pattern&gt;%d&#123;yyyy-MM-dd HH:mm:ss.SSS&#125; [%thread] %-5level %logger&#123;50&#125; - %msg%n&lt;/pattern&gt; &lt;charset&gt;UTF-8&lt;/charset&gt; &lt;/encoder&gt; &lt;/appender&gt; 发现这样设置不起作用。又找到下面方法： 123456&lt;appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender"&gt; &lt;encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder"&gt; &lt;pattern&gt;%d&#123;yyyy-MM-dd HH:mm:ss.SSS&#125; [%thread] %-5level %logger&#123;50&#125; - %msg%n&lt;/pattern&gt; &lt;charset&gt;UTF-8&lt;/charset&gt; &lt;/encoder&gt;&lt;/appender&gt; 这样还是不行的，最后想可能和tomcat启动的编码有关系，在IntelliJ IDEA中设置Tomcat启动参数,如下：1-Dfile.encoding=UTF-8 重启Tomcat，日志显示正常了。]]></content>
+      <tags>
+        <tag>log</tag>
+      </tags>
+  </entry>
 </search>
